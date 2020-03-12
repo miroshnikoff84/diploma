@@ -1,9 +1,6 @@
-'use strict';
-
 const modalWindow = () => {
   const btnAlertModal = (btn, popupWindow, popupWindowContent, form) => {
 
-    let count = 0;
     btn.forEach((elem) => {
       elem.addEventListener('click', (event) => {
         event.preventDefault();
@@ -29,7 +26,6 @@ const modalWindow = () => {
 
       const countPopupNone = () => {
         popupWindow.style.display = 'none';
-        count = 0;
       };
       let target = event.target;
       if (target.matches('.popup-close')) {
@@ -42,7 +38,7 @@ const modalWindow = () => {
       }
     });
   };
-  
+  //Popup-call
   const popupCall = () => {
     const popupCall = document.querySelector('.popup-call'),
       callBtn = document.querySelectorAll('.call-btn'),
@@ -52,6 +48,9 @@ const modalWindow = () => {
     btnAlertModal(callBtn, popupCall, popupContentCall, callForm);
   };
   popupCall();
+
+  
+
 };
 
 modalWindow(); 
