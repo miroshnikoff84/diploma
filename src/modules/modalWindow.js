@@ -54,4 +54,4 @@ const modalWindow = () => {
   popupCall();
 };
 
-modalWindow(); 
+export default modalWindow; 
