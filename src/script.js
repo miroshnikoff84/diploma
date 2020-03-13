@@ -1,6 +1,6 @@
 'use strict';
 const modalWindow = () => {
-  const btnAlertModal = (btn, popupWindow, popupWindowContent, form) => {
+  const btnAlertModal = (btn, popupWindow, popupWindowContent) => {
     
 
     btn.forEach((elem) => {
@@ -12,7 +12,7 @@ const modalWindow = () => {
     });
 
     popupWindow.addEventListener('click', (event) => {
-      const popupNone = () => { //окно исчезает
+      const popupNone = () => { 
         popupWindow.style.display = 'none';
       };
       let target = event.target;
@@ -34,7 +34,7 @@ const modalWindow = () => {
       popupContentCall = document.querySelectorAll('.popup-content')[0],
       callForm = document.querySelectorAll('.capture-form')[1];
 
-    btnAlertModal(callBtn, popupCall, popupContentCall, callForm);
+    btnAlertModal(callBtn, popupCall, popupContentCall);
   };
   popupCall();
 
