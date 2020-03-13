@@ -7,6 +7,7 @@ const modalWindow = () => {
       elem.addEventListener('click', (event) => {
         if (form) {
           for (const elem of form.elements) {
+            event.preventDefault();
             if (elem.tagName.toLowerCase() !== 'button' && elem.type !== 'button') {
               elem.value = '';
               if (elem.style.border === '2px solid red') {
