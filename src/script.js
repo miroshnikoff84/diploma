@@ -71,7 +71,6 @@ const addBlocks = () => {
   const shadowBlocks = document.querySelectorAll(`.col-xs-12.col-sm-6.col-md-4`),
     btnAddSentence = document.querySelector('.add-sentence-btn');
 
-
   btnAddSentence.addEventListener('click', (event) => {
     event.preventDefault();
     shadowBlocks.forEach((elem) => {
@@ -79,89 +78,39 @@ const addBlocks = () => {
         elem.classList.remove('visible-sm-block', 'hidden');
         btnAddSentence.style.cssText = `transform: scale(0)`;
       }
-
     });
-
   });
-
 };
 
 addBlocks();
 
 //accordionTwo
-
 const accordionTwo = () => {
+  const panelCollapseOne = document.querySelector('#collapseOne-two'),
+    panelCollapseTwo = document.querySelector('#collapseTwo-two'),
+    panelCollapseThree = document.querySelector('#collapseThree-two');
 
-  const btnAccordionTwo = document.querySelectorAll(`a[data-parent="#accordion-two"]`),
-    collapseOne = document.querySelector('.collapseOne'),
-    collapseTwo = document.querySelector('.collapseTwo'),
-    collapseThree = document.querySelector('.collapseThree');
-
-
-  const sailOpacityTwo = (panelCollapse) => { //плавное появление
-    let count = 30;
-    let panelInterval;
-    const panelOpacityTwo = function () {
-      panelInterval = requestAnimationFrame(panelOpacityTwo);
-      count++;
-      if (count <= 100) { //уменьшаем прозрачность
-        panelCollapse.style.opacity = count + '%';
-      } else {
-        cancelAnimationFrame(panelInterval);
-      }
-    };
-    panelOpacityTwo();
-  };
-
-  btnAccordionTwo.forEach((elem) => {
+  const btn = document.querySelectorAll(`a[data-parent="#accordion-two"]`);
+  btn.forEach((elem) => {
     elem.addEventListener('click', (event) => {
       event.preventDefault();
+      let target = event.target;
 
-      if (elem.closest('#headingOne-two')) {
-
-        if (collapseOne.style.display === 'none') {
-          collapseOne.style.display = 'block';
-          sailOpacityTwo(collapseOne);
-          collapseTwo.style.display = 'none';
-          collapseThree.style.display = 'none';
-
-        } else {
-          collapseOne.style.display = 'block';
-        }
-      }
-
-      if (elem.closest('#headingTwo-two')) {
-
-        if (collapseTwo.style.display === 'block') {
-          collapseTwo.style.display = 'block';
-        } else {
-          collapseOne.style.display = 'none';
-          collapseTwo.style.display = 'block';
-          sailOpacityTwo(collapseTwo);
-          collapseThree.style.display = 'none';
-        }
-      }
-
-      if (elem.closest('#headingThree-two')) {
-
-        if (collapseThree.style.display === 'block') {
-          collapseThree.style.display = 'block';
-        } else {
-          collapseOne.style.display = 'none';
-          collapseTwo.style.display = 'none';
-          collapseThree.style.display = 'block';
-          sailOpacityTwo(collapseThree);
-        }
+      if (target === (btn[0])) {
+        panelCollapseOne.style.display = 'block';
+        panelCollapseTwo.style.display = 'none';
+        panelCollapseThree.style.display = 'none';
+      } else if (target === (btn[1])) {
+        panelCollapseOne.style.display = 'none';
+        panelCollapseTwo.style.display = 'block';
+        panelCollapseThree.style.display = 'none';
+      } else if (target === (btn[2])) {
+        panelCollapseOne.style.display = 'none';
+        panelCollapseTwo.style.display = 'none';
+        panelCollapseThree.style.display = 'block';
       }
     });
-
   });
-
 };
 
 accordionTwo();
-
-
-
-
-
