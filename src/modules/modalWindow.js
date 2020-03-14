@@ -39,7 +39,16 @@ const modalWindow = () => {
   };
   popupCall();
 
+  //Popup-discount
+  const popupDiscount = () => {
+    const btnDiscount = document.querySelectorAll('.discount-btn'),
+      popupDiscount = document.querySelector('.popup-discount'),
+      popupContentDiscount = document.querySelectorAll('.popup-content')[1],
+      discountForm = document.querySelectorAll('.capture-form')[2];
 
+    btnAlertModal(btnDiscount, popupDiscount, popupContentDiscount, discountForm);
+  };
+  popupDiscount();
 
 };
   
