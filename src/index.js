@@ -1,5 +1,7 @@
 'use strict';
 
-import modalWindow from './modules/modalWindow';
+const modalWindow = require('./modules/modalWindow');
+const addBlocks = require('./modules/addBlocks');
 
 modalWindow();
+addBlocks();

@@ -43,4 +43,4 @@ const modalWindow = () => {
 };
   
 
-modalWindow();
+module.exports = modalWindow;
