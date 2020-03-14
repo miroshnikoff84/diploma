@@ -1,4 +1,5 @@
 'use strict';
+
 const modalWindow = () => {
   const btnAlertModal = (btn, popupWindow, popupWindowContent, form) => {
     
