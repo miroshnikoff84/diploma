@@ -49,7 +49,7 @@ const modalWindow = () => {
     btnAlertModal(btnDiscount, popupDiscount, popupContentDiscount, discountForm);
   };
   popupDiscount();
-
+  
   //Popup-check
   const popupCheck = () => {
     const btnCheck = document.querySelectorAll('.gauging-button'),
@@ -60,6 +60,17 @@ const modalWindow = () => {
     btnAlertModal(btnCheck, popupCheck, popupContentCheck, checkForm);
   };
   popupCheck();
+
+  //Popup-consultation
+  const popupConsultation = () => {
+    const btnConsultation = document.querySelectorAll('.consultation-btn'),
+      popupConsultation = document.querySelector('.popup-consultation'),
+      popupContentConsultation = document.querySelectorAll('.popup-content')[3],
+      consultationForm = document.querySelectorAll('.capture-form')[4];
+
+    btnAlertModal(btnConsultation, popupConsultation, popupContentConsultation, consultationForm);
+  };
+  popupConsultation();
 
 };
   
