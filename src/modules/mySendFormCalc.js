@@ -33,7 +33,7 @@ class SendFormCalc {
     this.sendForm();
   }
 
-  inputCheck() {//ввод. в инпут только цифры и кириллица
+  inputCheck() { //ввод. в инпут только цифры и кириллица
     const input = document.querySelectorAll('input');
     input.forEach((elem) => {
       elem.addEventListener('input', () => {
@@ -43,10 +43,10 @@ class SendFormCalc {
         }
 
         if (elem.name === 'user_phone') {
-          elem.setAttribute('maxlength', '18');//ограничение на кол-во символов
+          elem.setAttribute('maxlength', '18'); //ограничение на кол-во символов
         }
 
-        if (elem.name === 'user_quest') {//'введите вопрос'
+        if (elem.name === 'user_quest') { //'введите вопрос'
           elem.value = elem.value.replace(/[^a-zа-яё\s\d?!\.,:;]/ig, '');
           elem.setAttribute('maxlength', '120');
         }
@@ -116,14 +116,14 @@ class SendFormCalc {
     const myOnOffSwitchOne = document.getElementById('myonoffswitch'),
       myOnOffSwitchTwo = document.getElementById('myonoffswitch-two');
 
-    
+
     myOnOffSwitchOne.addEventListener('change', () => {
-      if (myOnOffSwitchOne.checked) {//если чекбокс включён
+      if (myOnOffSwitchOne.checked) { //если чекбокс включён
 
         //1 колодец
         const chamberOne = () => {
           sumpTwo.style.display = 'none';
-          calcResult.value = +this.obj.priseOne + 1000;//цена за днище
+          calcResult.value = +this.obj.priseOne + 1000; //цена за днище
 
           formControl.forEach((elem) => {
 
@@ -155,7 +155,7 @@ class SendFormCalc {
               }
               //
               this.obj.wellOne = calcResult.value;
-              calcResult.value = +calcResult.value + 1000;//отображаем в примерной стоимости
+              calcResult.value = +calcResult.value + 1000; //отображаем в примерной стоимости
 
             });
           });
@@ -176,100 +176,100 @@ class SendFormCalc {
                   //1шт
                   if (formNumberOne.value === '1 штука') {
                     if (formNumberTwo.value === '1 штука') {
-                      calcResult.value = 15000;//15000
+                      calcResult.value = 15000; //15000
                     } else if (formNumberTwo.value === '2 штуки') {
-                      calcResult.value = (15000 * 30) / 100 + 15000;//19500
+                      calcResult.value = (15000 * 30) / 100 + 15000; //19500
                     } else if (formNumberTwo.value === '3 штуки') {
-                      calcResult.value = (15000 * 50) / 100 + 15000;//22500
+                      calcResult.value = (15000 * 50) / 100 + 15000; //22500
                     }
                   }
                   //2шт
                   if (formNumberOne.value === '2 штуки') {
                     if (formNumberTwo.value === '1 штука') {
-                      calcResult.value = (15000 * 30) / 100 + 15000;//19500
+                      calcResult.value = (15000 * 30) / 100 + 15000; //19500
                     } else if (formNumberTwo.value === '2 штуки') {
-                      calcResult.value = ((15000 * 30) / 100) * 2 + 15000;//24000
+                      calcResult.value = ((15000 * 30) / 100) * 2 + 15000; //24000
                     } else if (formNumberTwo.value === '3 штуки') {
-                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 15000;//27000
+                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 15000; //27000
                     }
                   }
                   //3шт
                   if (formNumberOne.value === '3 штуки') {
                     if (formNumberTwo.value === '1 штука') {
-                      calcResult.value = (15000 * 50) / 100 + 15000;//22500
+                      calcResult.value = (15000 * 50) / 100 + 15000; //22500
                     } else if (formNumberTwo.value === '2 штуки') {
-                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 15000;//27000
+                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 15000; //27000
                     } else if (formNumberTwo.value === '3 штуки') {
-                      calcResult.value = ((15000 * 50) / 100) * 2 + 15000;//30000
+                      calcResult.value = ((15000 * 50) / 100) * 2 + 15000; //30000
                     }
                   }
                 }
                 //2 proviso
                 if (formDiameterOne.value === '2 метра' && formDiameterTwo.value === '1.4 метра' ||
                   formDiameterOne.value === '1.4 метра' && formDiameterTwo.value === '2 метра') {
-                  this.elemDoc.calcResult.value = ((15000 * 20) / 100) + 15000;//18000
+                  this.elemDoc.calcResult.value = ((15000 * 20) / 100) + 15000; //18000
                   //1шт
                   if (formNumberOne.value === '1 штука') {
                     if (formNumberTwo.value === '1 штука') {
-                      calcResult.value = 18000;//18000
+                      calcResult.value = 18000; //18000
                     } else if (formNumberTwo.value === '2 штуки') {
-                      calcResult.value = (15000 * 30) / 100 + 18000;//22500
+                      calcResult.value = (15000 * 30) / 100 + 18000; //22500
                     } else if (formNumberTwo.value === '3 штуки') {
-                      calcResult.value = (15000 * 50) / 100 + 18000;//25500
+                      calcResult.value = (15000 * 50) / 100 + 18000; //25500
                     }
                   }
                   //2шт
                   if (formNumberOne.value === '2 штуки') {
                     if (formNumberTwo.value === '1 штука') {
-                      this.elemDoc.calcResult.value = (15000 * 30) / 100 + 18000;//22500
+                      this.elemDoc.calcResult.value = (15000 * 30) / 100 + 18000; //22500
                     } else if (formNumberTwo.value === '2 штуки') {
-                      calcResult.value = ((15000 * 30) / 100) * 2 + 18000;//27000
+                      calcResult.value = ((15000 * 30) / 100) * 2 + 18000; //27000
                     } else if (formNumberTwo.value === '3 штуки') {
-                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 18000;//30000
+                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 18000; //30000
                     }
                   }
                   //3шт
                   if (formNumberOne.value === '3 штуки') {
                     if (formNumberTwo.value === '1 штука') {
-                      calcResult.value = (15000 * 50) / 100 + 18000;//25500
+                      calcResult.value = (15000 * 50) / 100 + 18000; //25500
                     } else if (formNumberTwo.value === '2 штуки') {
-                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 18000;//30000
+                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 18000; //30000
                     } else if (formNumberTwo.value === '3 штуки') {
-                      calcResult.value = ((15000 * 50) / 100) * 2 + 18000;//33000
+                      calcResult.value = ((15000 * 50) / 100) * 2 + 18000; //33000
                     }
                   }
                 }
                 //3 proviso
                 if (formDiameterOne.value === '2 метра' && formDiameterTwo.value === '2 метра') {
-                  calcResult.value = ((15000 * 20) / 100) * 2 + 15000;//21000
+                  calcResult.value = ((15000 * 20) / 100) * 2 + 15000; //21000
                   //1шт
                   if (this.elemDoc.formNumberOne.value === '1 штука') {
                     if (formNumberTwo.value === '1 штука') {
-                      calcResult.value = 21000;//21000
+                      calcResult.value = 21000; //21000
                     } else if (formNumberTwo.value === '2 штуки') {
-                      calcResult.value = (15000 * 30) / 100 + 21000;//25500
+                      calcResult.value = (15000 * 30) / 100 + 21000; //25500
                     } else if (formNumberTwo.value === '3 штуки') {
-                      calcResult.value = (15000 * 50) / 100 + 21000;//28500
+                      calcResult.value = (15000 * 50) / 100 + 21000; //28500
                     }
                   }
                   //2шт
                   if (formNumberOne.value === '2 штуки') {
                     if (formNumberTwo.value === '1 штука') {
-                      calcResult.value = (15000 * 30) / 100 + 21000;//25500
+                      calcResult.value = (15000 * 30) / 100 + 21000; //25500
                     } else if (formNumberTwo.value === '2 штуки') {
-                      calcResult.value = ((15000 * 30) / 100) * 2 + 21000;//30000
+                      calcResult.value = ((15000 * 30) / 100) * 2 + 21000; //30000
                     } else if (formNumberTwo.value === '3 штуки') {
-                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 21000;//33000
+                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 21000; //33000
                     }
                   }
                   //3шт
                   if (formNumberOne.value === '3 штуки') {
                     if (formNumberTwo.value === '1 штука') {
-                      calcResult.value = (15000 * 50) / 100 + 21000;//28500
+                      calcResult.value = (15000 * 50) / 100 + 21000; //28500
                     } else if (formNumberTwo.value === '2 штуки') {
-                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 21000;//33000
+                      calcResult.value = (((15000 * 30) / 100) + ((15000 * 50) / 100)) + 21000; //33000
                     } else if (formNumberTwo.value === '3 штуки') {
-                      calcResult.value = ((15000 * 50) / 100) * 2 + 21000;//36000
+                      calcResult.value = ((15000 * 50) / 100) * 2 + 21000; //36000
                     }
                   }
                 }
@@ -342,13 +342,14 @@ class SendFormCalc {
             } else if (elem === formNumberTwo) {
               this.obj2.number2 = elem.value;
             }
-          } if (sumpTwo.style.display === 'none') {
+          }
+          if (sumpTwo.style.display === 'none') {
             if (elem === formDiameterOne) {
               this.obj2.diameter1 = elem.value;
             } else if (elem === formNumberOne) {
               this.obj2.number1 = elem.value;
             }
-            deletElemObj2();//очистка значений при 1 колодце
+            deletElemObj2(); //очистка значений при 1 колодце
           }
         });
       });
@@ -366,9 +367,9 @@ class SendFormCalc {
 
     //Закрываем последний блок
     const closeCollapseFour = () => {
-      btnFour.addEventListener('click', () => {//закрываем последний блок при нажатии на кнопку "получить расчёт"
-        if (sumpTwo.style.display === 'none') {//проверка при выборе 1 колодца
-          deletElemObj2();//очистка значений
+      btnFour.addEventListener('click', () => { //закрываем последний блок при нажатии на кнопку "получить расчёт"
+        if (sumpTwo.style.display === 'none') { //проверка при выборе 1 колодца
+          deletElemObj2(); //очистка значений
         }
         if (collapseFourId.style.display === 'block') {
           collapseFourId.style.display = 'none';
@@ -406,11 +407,11 @@ class SendFormCalc {
 
     //валидация инпутов
     const valid = (event, form) => {
-      const elementsForm = [];//пустой массив для инпутов
+      const elementsForm = []; //пустой массив для инпутов
 
-      for (const elem of form.elements) {//вытаскиваем из формы инпуты
+      for (const elem of form.elements) { //вытаскиваем из формы инпуты
         if (elem.tagName.toLowerCase() !== 'button' && elem.type !== 'button') {
-          elementsForm.push(elem);//пушим в массив только наши инпуты
+          elementsForm.push(elem); //пушим в массив только наши инпуты
         }
       }
 
@@ -421,13 +422,13 @@ class SendFormCalc {
         //const patternEmail = /^[\w-]+@\w+\.\w{1,}\D$/;//после точки больше 1 символа, не цифры
 
         if (elem.value.trim() === '' || elem.name === 'user_phone' && !patternPhone.test(elem.value) ||
-          elem.name === 'user_name' && !patternText.test(elem.value)) {//если не проходит валидацию
+          elem.name === 'user_name' && !patternText.test(elem.value)) { //если не проходит валидацию
           event.preventDefault();
           elem.style.border = '2px solid red';
-          this.error.add(elem);//добавл. инпуты с ошибками в Set
+          this.error.add(elem); //добавл. инпуты с ошибками в Set
         } else {
           event.preventDefault();
-          this.error.delete(elem);//удал. инпуты из Seta
+          this.error.delete(elem); //удал. инпуты из Seta
           elem.style.border = '';
         }
       });
@@ -440,23 +441,23 @@ class SendFormCalc {
       //создание формы для отправки
       const getForm = (event, form, form2, obj) => {
 
-        event.preventDefault();//чтобы страница не перезагружалась по умолчанию
+        event.preventDefault(); //чтобы страница не перезагружалась по умолчанию
         form.appendChild(statusDiv);
         statusDiv.appendChild(statusMessage);
 
-        statusMessage.textContent = loadMessage;//идёт загрузка
-        let body = {};//объект, ко-й отправл. на сервер в формате json
+        statusMessage.textContent = loadMessage; //идёт загрузка
+        let body = {}; //объект, ко-й отправл. на сервер в формате json
 
-        let formData = new FormData(form);//получ. данные нашей формы c атрибутом name в объект
+        let formData = new FormData(form); //получ. данные нашей формы c атрибутом name в объект
         if (form2) {
-          for (const elem of form2.elements) {//вытаскиваем из формы инпуты
+          for (const elem of form2.elements) { //вытаскиваем из формы инпуты
             if (elem.tagName.toLowerCase() !== 'button' && elem.type !== 'button') {
-              formData.append(elem.name, elem.value);//добавляем ключ и значение в formData
+              formData.append(elem.name, elem.value); //добавляем ключ и значение в formData
             }
           }
         }
         if (obj) {
-          for (let key in obj) {//эл. в др. объект
+          for (let key in obj) { //эл. в др. объект
             body[key] = obj[key];
           }
         }
@@ -465,32 +466,32 @@ class SendFormCalc {
         });
 
         //postData - отправка на сервер
-        const postData = (body) => {//ф. отправки запроса
-          return fetch('./server.php', {//отправка запроса на сервер с по-ю промисов
-            method: 'POST',//отправляем и получаем
-            headers: {//заголовки
-              'Content-Type': 'application/json'//сообщаем серверу, что передаём json
+        const postData = (body) => { //ф. отправки запроса
+          return fetch('./server.php', { //отправка запроса на сервер с по-ю промисов
+            method: 'POST', //отправляем и получаем
+            headers: { //заголовки
+              'Content-Type': 'application/json' //сообщаем серверу, что передаём json
             },
-            body: JSON.stringify(body),//преобр. данные (~body) в json(строка) и передаём
+            body: JSON.stringify(body), //преобр. данные (~body) в json(строка) и передаём
             credentials: 'include',
             cache: 'default'
           });
         };
 
         postData(body)
-          .then((response) => {//данные, ко-е мы получаем
+          .then((response) => { //данные, ко-е мы получаем
             if (response.status !== 200) {
-              throw new Error('status network not 200');//обрабатываем как ошибку через конструктор
+              throw new Error('status network not 200'); //обрабатываем как ошибку через конструктор
             }
             statusMessage.textContent = successMessage;
           })
           .catch((error) => {
-            statusMessage.style.color = '#bd1717';//красный цвет сообщения
+            statusMessage.style.color = '#bd1717'; //красный цвет сообщения
             statusMessage.textContent = errorMessage;
             console.error(error);
           });
 
-        setTimeout(() => {//убираем сообщение
+        setTimeout(() => { //убираем сообщение
           form.removeChild(statusDiv);
         }, 3000);
       };
@@ -525,7 +526,7 @@ class SendFormCalc {
         for (const elem of form.elements) {
           if (elem.tagName.toLowerCase() !== 'button' && elem.type !== 'button') {
             elem.value = '';
-            elem.removeAttribute('required');//удаляем required
+            elem.removeAttribute('required'); //удаляем required
           }
         }
         if (form2) {
@@ -536,12 +537,12 @@ class SendFormCalc {
             }
           }
         }
-        if (obj) {//очистка при наличии объекта
+        if (obj) { //очистка при наличии объекта
           resetObj();
         }
       };
 
-      if (!this.error.size) {//если size не содержит ошибки (в Set);size коли-во эл. в массиве Set
+      if (!this.error.size) { //если size не содержит ошибки (в Set);size коли-во эл. в массиве Set
         getForm(event, form, form2, obj);
         inputReset(form, form2, obj);
       }

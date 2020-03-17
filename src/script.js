@@ -82,7 +82,7 @@ const accordionTwo = () => {
     content2 = document.getElementById('collapseTwo-two'),
     content3 = document.getElementById('collapseThree-two');
   content1.style.maxHeight = content1.scrollHeight + "px";
-  
+
   btn.forEach((elem) => {
     elem.style.cursor = 'pointer';
   });
@@ -97,12 +97,12 @@ const accordionTwo = () => {
         content2.style.maxHeight = null;
         content1.style.maxHeight = content1.scrollHeight + "px";
       }
-      if (target === btn[1]|| target === btnAcc[1]) {
+      if (target === btn[1] || target === btnAcc[1]) {
         content3.style.maxHeight = null;
         content1.style.maxHeight = null;
         content2.style.maxHeight = content1.scrollHeight + "px";
       }
-      if (target === btn[2]|| target === btnAcc[2]) {
+      if (target === btn[2] || target === btnAcc[2]) {
         content1.style.maxHeight = null;
         content2.style.maxHeight = null;
         content3.style.maxHeight = content1.scrollHeight + "px";
