@@ -1,18 +1,9 @@
- .collapse {
-	overflow: hidden;
-}
-/* .collapse:target{
-	max-height: 30rem;
-}
-.panel-heading {
-	cursor: pointer;
-}
-.collapsed {
-	overflow: hidden;
-	max-height: 0;
-	transition: max-height 0.5s;
-}
 
-.collapsed:target{
-	max-height: 30rem;
-} */ 
+
+#collapseOne-two,
+#collapseTwo-two,
+#collapseThree-two {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-in-out;
+}

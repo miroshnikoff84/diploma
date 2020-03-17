@@ -8,6 +8,7 @@ const accordionCalc = () => {
     collapseTwoId = document.getElementById('collapseTwo'),
     collapseThreeId = document.getElementById('collapseThree');
   let collapseFourId = document.getElementById('collapseFour');
+  collapseOneId.style.display = 'block';
 
   btnAccordion.forEach((elem) => {
     elem.addEventListener('click', (event) => {
@@ -75,80 +76,49 @@ accordionCalc();
 //accordionTwo
 const accordionTwo = () => {
 
-  const btn = document.querySelectorAll(`a[data-parent="#accordion-two"]`);
-    const panelCollapseOne = document.querySelector('#collapseOne-two'),
-        panelCollapseTwo = document.querySelector('#collapseTwo-two'),
-    panelCollapseThree = document.querySelector('#collapseThree-two');
-
-  const slideAdd = (panelCollapse, collapseHeight) => { //плавное появление
-    let count = 0;
-    let panelInterval;
-    let curentHeight;
-    const panelOpacityTwo = function () {
-      panelInterval = requestAnimationFrame(panelOpacityTwo);
-      curentHeight = count;
-      count = count + 5;
-      if (count <= collapseHeight) { 
-
-        panelCollapse.style.maxHeight = count + 'px';
-      } else {
-        cancelAnimationFrame(panelInterval);
-      }
-    };
-    panelOpacityTwo();
-  };
-  const slideKill = (panelCollapse, collapseHeightDown) => { //плавное убывание
-    let count = collapseHeightDown;
-    let panelInterval;
-    const panelOpacityTwoo = function () {
-      panelInterval = requestAnimationFrame(panelOpacityTwoo);
-      count = count - 5;
-      if (count <= collapseHeightDown) { 
-
-        panelCollapse.style.maxHeight = count + 'px';
-      } else {
-        cancelAnimationFrame(panelInterval);
-      }
-    };
-    panelOpacityTwoo();
-  };
+  const btn = document.querySelectorAll('.acc'),
+    btnAcc = document.querySelectorAll(`a[data-parent="#accordion-two"]`),
+    content1 = document.getElementById('collapseOne-two'),
+    content2 = document.getElementById('collapseTwo-two'),
+    content3 = document.getElementById('collapseThree-two');
+  content1.style.maxHeight = content1.scrollHeight + "px";
+  
+  btn.forEach((elem) => {
+    elem.style.cursor = 'pointer';
+  });
 
   btn.forEach((elem) => {
     elem.addEventListener('click', (event) => {
-      event.preventDefault();
+
       let target = event.target;
-      panelCollapseTwo.style.maxHeight = 0 + 'px';
-      panelCollapseThree.style.maxHeight = 0 + 'px';
 
-      
-
-      if (target === (btn[0]) && panelCollapseOne.style.maxHeight === 0 + 'px') {
-          panelCollapseOne.style.display = 'block';
-        slideAdd(panelCollapseOne, 140);
-        slideKill(panelCollapseTwo, 140);
-          slideKill(panelCollapseThree, 140);
-      } else if (target === (btn[1]) && panelCollapseTwo.style.maxHeight === 0 + 'px') {
-        panelCollapseTwo.style.display = 'block';
-        slideAdd(panelCollapseTwo, 140);
-        panelCollapseOne.style.maxHeight = 0 + 'px';
-        slideKill(panelCollapseOne, 140);
-          slideKill(panelCollapseThree, 140);
-      } else if (target === (btn[2]) && panelCollapseThree.style.maxHeight === 0 + 'px') {
-        panelCollapseThree.style.display = 'block';
-        slideAdd(panelCollapseThree, 140);
-        panelCollapseOne.style.maxHeight = 0 + 'px';
-        slideKill(panelCollapseOne, 140);
-          slideKill(panelCollapseTwo, 140);
+      if (target === btn[0] || target === btnAcc[0]) {
+        content3.style.maxHeight = null;
+        content2.style.maxHeight = null;
+        content1.style.maxHeight = content1.scrollHeight + "px";
       }
-      
-    });
+      if (target === btn[1]|| target === btnAcc[1]) {
+        content3.style.maxHeight = null;
+        content1.style.maxHeight = null;
+        content2.style.maxHeight = content1.scrollHeight + "px";
+      }
+      if (target === btn[2]|| target === btnAcc[2]) {
+        content1.style.maxHeight = null;
+        content2.style.maxHeight = null;
+        content3.style.maxHeight = content1.scrollHeight + "px";
+      }
 
+    });
   });
+
+
 
 };
 
+
 accordionTwo();
 
+// ModalWindow
 const modalWindow = () => {
   const btnAlertModal = (btn, popupWindow, popupWindowContent, form) => {
 
@@ -211,6 +181,17 @@ const modalWindow = () => {
     btnAlertModal(btnDiscount, popupDiscount, popupContentDiscount, discountForm);
   };
   popupDiscount();
+
+  //Popup-discount-calculation
+  const popupDiscountCalc = () => {
+    const btnDiscountCalc = document.querySelectorAll('.btnFour'),
+      popupDiscountCalc = document.querySelector('.popup-discount-calculation'),
+      popupContentDiscountCalc = document.querySelectorAll('.popup-content')[4],
+      discountCalcForm = document.querySelectorAll('.capture-form')[5];
+
+    btnAlertModal(btnDiscountCalc, popupDiscountCalc, popupContentDiscountCalc, discountCalcForm);
+  };
+  popupDiscountCalc();
 
   //Popup-check
   const popupCheck = () => {

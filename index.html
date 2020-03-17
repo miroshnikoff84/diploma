@@ -136,7 +136,7 @@
                         <div class="panel panel-default panel-one wow fadeInLeft">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" 
                                         aria-expanded="true" aria-controls="collapseOne">
                                         <span class="link-text">1. Тип септика</span>
                                     </a>
@@ -166,7 +166,7 @@
                             <div class="panel-heading" role="tab" id="headingTwo">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                         aria-expanded="false" aria-controls="collapseTwo">
                                         <span class="link-text">2. Диаметр и количество колец</span>
                                     </a>
                                 </h4>
@@ -220,7 +220,7 @@
                             <div class="panel-heading" role="tab" id="headingThree">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                         aria-expanded="false" aria-controls="collapseThree">
                                         <span class="link-text">3. Наличие днища колодца</span>
                                     </a>
                                 </h4>
@@ -250,7 +250,7 @@
                             <div class="panel-heading" role="tab" id="headingFour">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                         aria-expanded="false" aria-controls="collapseFour">
                                         <span class="link-text">4. Расстояние от септика до дома</span>
                                     </a>
                                 </h4>
@@ -373,17 +373,17 @@
    <section class="questions">
     <div class="container">
         <h2>Часто задаваемые вопросы</h2>
-        <div class="panel-group wow slideInDown" id="accordion-two" role="tablist" aria-multiselectable="true">
+        <div class="panel-group" id="accordion-two" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
                 <div class="panel-heading acc" role="tab" id="headingOne-two">
                     <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion-two" href="#collapseOne-two"
+                        <a role="button" data-toggle="collapse" data-parent="#accordion-two"
                            aria-expanded="true" aria-controls="collapseOne-two">
                             Существует ли вероятность того, что подводящий трубопровод замерзнет?
                         </a>
                     </h4>
                 </div>
-                <div id="collapseOne-two" class="panel-collapse collapse in" role="tabpanel"
+                <div id="collapseOne-two" class="panel-collapse collapse in " style="max-height: 140" role="tabpanel"
                      aria-labelledby="headingOne">
                     <div class="panel-body">
                         Вероятность того, что вода в подводящем трубопроводе замерзнет, отсутствует, потому что она
@@ -398,13 +398,13 @@
                 <div class="panel-heading acc" role="tab" id="headingTwo-two">
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-two"
-                           href="#collapseTwo-two" aria-expanded="false" aria-controls="collapseTwo-two">
+                            aria-expanded="false" aria-controls="collapseTwo-two">
                             Помогают ли предлагаемые вами устройства достичь в загородном доме комфорта городского
                             уровня?
                         </a>
                     </h4>
                 </div>
-                <div id="collapseTwo-two" class="panel-collapse collapse" role="tabpanel"
+                <div id="collapseTwo-two" class="panel-collapse collapse in" role="tabpanel"
                      aria-labelledby="headingTwo-two">
                     <div class="panel-body">
                         Нет, не может. Армированное изделие и марка бетона М-350, позволяют выдерживать значительные
@@ -416,12 +416,12 @@
                 <div class="panel-heading acc" role="tab" id="headingThree-two">
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-two"
-                           href="#collapseThree-two" aria-expanded="false" aria-controls="collapseThree-two">
+                           aria-expanded="false" aria-controls="collapseThree-two">
                             Погибают ли бактерии в холодный период при долгом простое системы?
                         </a>
                     </h4>
                 </div>
-                <div id="collapseThree-two" class="panel-collapse collapse" role="tabpanel"
+                <div id="collapseThree-two" class="panel-collapse collapse in" role="tabpanel"
                      aria-labelledby="headingThree-two">
                     <div class="panel-body">
                         Да. Иногда зимний монтаж предпочтительней. Большегрузная техника по мороженому грунту не
@@ -605,5 +605,6 @@
     </div>
     <script src="./dist/main.js"></script>
     <!-- <script src="./src/script.js"></script> -->
+    <!-- <script src="./src/test.js"></script> -->
 </body>
 </html>

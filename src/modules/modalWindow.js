@@ -61,6 +61,17 @@ const modalWindow = () => {
   };
   popupCheck();
 
+  //Popup-discount-calculation
+  const popupDiscountCalc = () => {
+    const btnDiscountCalc = document.querySelectorAll('.btnFour'),
+      popupDiscountCalc = document.querySelector('.popup-discount-calculation'),
+      popupContentDiscountCalc = document.querySelectorAll('.popup-content')[4],
+      discountCalcForm = document.querySelectorAll('.capture-form')[5];
+
+    btnAlertModal(btnDiscountCalc, popupDiscountCalc, popupContentDiscountCalc, discountCalcForm);
+  };
+  popupDiscountCalc();
+
   //Popup-consultation
   const popupConsultation = () => {
     const btnConsultation = document.querySelectorAll('.consultation-btn'),
